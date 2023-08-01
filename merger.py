@@ -16,4 +16,6 @@ archive_star_df=archive_star_df.sort_values("Star")
 archive_star_df["Radius"]=archive_star_df["Radius"]*0.102763
 archive_star_df["Mass"]=archive_star_df["Mass"]*0.000954588
 
-merge_stars_df=pd.merge(archive_star_df,,on="id")
+merge_stars_df=pd.merge(archive_star_df,brightest_star_df,on="id")
+
+merge_stars_df.to_csv("merge_stars.csv")
